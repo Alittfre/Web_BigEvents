@@ -2,7 +2,7 @@ $(function() {
     getUserToken()
     let layer = layui.layer
     // 退出按钮功能
-    $('.layui-nav-item').click(function() {
+    $('.exitBtn').click(function() {
         layer.confirm('确认退出登录？', {icon: 3, title:'提示'}, function(index){
             localStorage.removeItem('BigEventToken')
             location.href = '../../login.html'
