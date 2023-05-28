@@ -5,13 +5,13 @@ $(function () {
             options.headers = {
                 Authorization: localStorage.getItem('BigEventToken') || ''
             }
-            options.complete = function(res) {
-                if(res.responseJSON.status === 1) {
-                    alert('验证用户token失败')
-                    localStorage.removeItem('BigEventToken')
-                    return location.href = '../../login.html'
-                }
-            }    
         }
+        options.complete = function(res) {
+            if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+                alert('验证用户token失败')
+                localStorage.removeItem('BigEventToken')
+                return location.href = '../../login.html'
+            }
+        }    
     })
 })

@@ -31,7 +31,6 @@ function getUserInfo(nickname, username, user_pic) {
         $('.layui-nav-img')
         .attr('src', user_pic)
         .show()
-        
     } else {
         $('.layui-nav-img').hide()
         $('.text-avatar').html(name[0])
